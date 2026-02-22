@@ -40,3 +40,19 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
       alert('Hubo un error al enviar el mensaje. Intentá de nuevo.');
     });
 });
+// Hamburger menu
+const toggle = document.getElementById('nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+
+// Cerrar el menu al hacer click en un link
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
